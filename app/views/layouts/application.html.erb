@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% flash.each do |_msg_type, message| %>
+      <div class="alert">
+        <div class="container">
+          <%= message %>
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

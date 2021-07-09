@@ -1,0 +1,7 @@
+<div class="mt-12">
+  <% if current_user %>
+    <%= link_to "Sign Out",destroy_user_session_path, method: :delete %>
+  <% end %>
+  <h1>Dashboard#show</h1>
+  <p>Find me in app/views/dashboard/show.html.erb</p>
+</div>
