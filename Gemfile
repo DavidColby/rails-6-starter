@@ -26,7 +26,10 @@ gem 'turbo-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'devise'
+gem "view_component", require: "view_component/engine"
+
+gem "devise", github: "ghiculescu/devise", branch: "error-code-422" # https://github.com/heartcombo/devise/pull/5340 not yet merged
+gem "responders", github: "heartcombo/responders" # https://github.com/heartcombo/responders/pull/223 not yet released
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

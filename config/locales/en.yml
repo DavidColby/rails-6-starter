@@ -33,3 +33,4 @@ en:
   shared:
     email_password_option: Or continue with
     oauth_options: "%{verb} with"
+    submitting: Submitting

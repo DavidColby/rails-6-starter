@@ -9,7 +9,3 @@
 .label {
   @apply block text-sm font-medium cursor-pointer;
 }
-
-.btn-primary {
-  @apply justify-center py-2 px-4 rounded border border-primary-600 hover:border-primary-700 shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 hover:shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
-}
