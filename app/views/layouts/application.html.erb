@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= render(Shared::TopNavComponent.new(user: current_user)) %>
     <% flash.each do |_msg_type, message| %>
       <div class="alert">
         <div class="container">

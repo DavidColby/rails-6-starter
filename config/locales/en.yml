@@ -33,4 +33,6 @@ en:
   shared:
     email_password_option: Or continue with
     oauth_options: "%{verb} with"
+    sign_in: Sign in
+    sign_up: Sign up
     submitting: Submitting

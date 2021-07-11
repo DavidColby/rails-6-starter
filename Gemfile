@@ -26,7 +26,7 @@ gem 'turbo-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-gem "view_component", require: "view_component/engine"
+gem "view_component", '>= 2.3.5', require: "view_component/engine"
 
 gem "devise", github: "ghiculescu/devise", branch: "error-code-422" # https://github.com/heartcombo/devise/pull/5340 not yet merged
 gem "responders", github: "heartcombo/responders" # https://github.com/heartcombo/responders/pull/223 not yet released
@@ -51,3 +51,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "capybara", "~> 3.35"

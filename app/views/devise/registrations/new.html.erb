@@ -1,19 +1,14 @@
-<div class="min-h-screen flex flex-col justify-center py-12">
-  <%= 
-    render(
-      Devise::HeaderComponent.new(
-        intro: t(".intro"),
-        lead_in: t(".lead_in"),
-        action_label: t(".sign_in"),
-        action_path: new_user_session_path
-      )
-    )
-  %>
+<div class="flex flex-col justify-center py-12">
+  <%= render Devise::HeaderComponent.new(path: new_user_session_path) do |component| %>
+    <%= component.intro { t('.intro') } %>
+    <%= component.lead_in { t('.lead_in') } %>
+    <%= component.action_label { t('.sign_in') } %>
+  <% end %>
 
   <div class="mt-6 mx-auto w-full max-w-md">
     <div class="bg-white py-6 px-4 shadow-lg rounded-lg px-10">
       <div>
-        <%= render 'shared/oauth_options', verb: "Sign in", intent: "login" %>
+        <%= render 'shared/oauth_options', verb: "Sign up", intent: "signup" %>
 
         <div class="mt-6 relative">
           <div class="absolute inset-0 flex items-center" aria-hidden="true">
@@ -44,7 +39,7 @@
         </div>
 
         <div>
-          <%= render(Shared::PrimaryButtonComponent.new(label: t('.cta_label'))) %>
+          <%= render(Shared::PrimaryButtonComponent.new.with_content(t('.cta_label'))) %>
         </div>
       <% end %>
     </div>

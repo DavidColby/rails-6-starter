@@ -2,40 +2,29 @@ require "rails_helper"
 
 RSpec.describe Devise::HeaderComponent, type: :component do
   context 'when all content is provided' do
-    subject(:component) do
-      described_class.new(
-        intro: 'Intro',
-        lead_in: 'Lead In',
-        action_label: 'Sign In',
-        action_path: '/sign_in'
-      )
-    end
-
     it 'renders a header with the provided content' do
-      render_inline(component)
+      render_inline(Devise::HeaderComponent.new(path: '/users/sign_in')) do |component|
+        component.intro { 'Intro' }
+        component.lead_in { 'Lead In' }
+        component.action_label { 'Sign In' }
+      end
 
-      expect(rendered_component).to include('Intro')
-      expect(rendered_component).to include('Lead In')
-      expect(rendered_component).to include('Sign In')
-      expect(rendered_component).to include('/sign_in')
+      expect(rendered_component).to have_css 'h2', text: 'Intro'
+      expect(rendered_component).to have_css 'p', text: 'Lead In'
+      expect(rendered_component).to have_link 'Sign In', href: '/users/sign_in'
     end
   end
 
   context 'when lead_in is not provided' do
-    subject(:component) do
-      described_class.new(
-        intro: 'Intro',
-        lead_in: '',
-        action_label: 'Sign In',
-        action_path: '/sign_in'
-      )
-    end
+    it 'renders a header without a link' do
+      render_inline(Devise::HeaderComponent.new(path: 'users/sign_up')) do |component|
+        component.intro { 'Intro' }
+        component.lead_in { '' }
+      end
 
-    it 'does not render the lead in section' do
-      render_inline(component)
-
-      expect(rendered_component).to include('Intro')
-      expect(rendered_component).not_to include('Sign In')
+      expect(rendered_component).to have_text('Intro')
+      expect(rendered_component).not_to have_text('Lead In')
+      expect(rendered_component).not_to have_text('Sign In')
     end
   end
 end
