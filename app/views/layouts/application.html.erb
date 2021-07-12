@@ -11,16 +11,14 @@
   </head>
 
   <body>
-    <%= render(Shared::TopNavComponent.new(user: current_user)) %>
-    <% flash.each do |_msg_type, message| %>
-      <div class="alert">
-        <div class="container">
-          <%= message %>
-        </div>
+    <div class="flex flex-col h-screen">
+      <%= render(Shared::TopNavComponent.new(user: current_user)) %>
+      <div class="text-gray-700">
+        <%= yield %>
       </div>
-    <% end %>
-    <div class="text-gray-700">
-      <%= yield %>
+      <% flash.each do |key, value| %>
+        <%= render partial: "shared/flash_message", locals: { level: key, content: value } %>
+      <% end %>
     </div>
   </body>
 </html>
