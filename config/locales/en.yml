@@ -33,6 +33,8 @@ en:
   shared:
     email_password_option: Or continue with
     oauth_options: "%{verb} with"
+    privacy_link: Privacy policy
     sign_in: Sign in
     sign_up: Sign up
     submitting: Submitting
+    terms_link: Terms of service
