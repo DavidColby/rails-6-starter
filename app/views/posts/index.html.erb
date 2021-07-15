@@ -1,0 +1,29 @@
+<div class="mt-8" data-controller="extended-modal" data-extended-modal-prevent-default-action-opening="false">
+  <%= render partial: 'posts/modal' %>
+  <div class="max-w-6xl flex justify-between items-baseline mx-auto mb-6">
+    <div>
+      <h2 class="max-w-6xl mt-8 text-lg leading-6 font-medium text-gray-900">
+        Posts
+      </h2>
+    </div>
+    <div>
+      <span class="inline-flex rounded-md shadow-sm">
+        <button class="btn btn-primary" data-action="click->extended-modal#open">
+          New Post
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col mt-2">
+      <div class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
+        <%= turbo_frame_tag "posts" do %>
+          <% @posts.each do |post| %>
+              <%= render "post", post: post %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

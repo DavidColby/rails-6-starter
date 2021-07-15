@@ -1,11 +1,10 @@
 import { Modal } from "tailwindcss-stimulus-components"
 
 export default class ExtendedModal extends Modal {
+  static targets = ["form"]
+
   connect() {
     super.connect()
-    if(this.element.dataset.trigger && this.element.dataset.trigger === "onLoad") {
-      this.openOnLoad()
-    }
   }
 
   open(e) {
@@ -43,5 +42,12 @@ export default class ExtendedModal extends Modal {
       this.containerTarget.classList.add(this.toggleClass);
       this.containerTarget.classList.remove("fade-out")
     }, 150);
+  }
+
+  handleSuccess({ detail: { success } }) {
+    if (success) {
+      super.close()
+      this.formTarget.reset()
+    }
   }
 }
