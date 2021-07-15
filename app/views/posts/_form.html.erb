@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "post_form" do %>
-  <%= form_with(model: @post, data: { extended_modal_target: 'form' }) do |form| %>
+  <%= form_with(model: @post, id: "post_form", data: { extended_modal_target: 'form' }) do |form| %>
     <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
       <% if @post.errors.any? %>
         <div id="error_explanation">

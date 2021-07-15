@@ -1,3 +1,5 @@
+<%= turbo_frame_tag 'post_modal' %>
+
 <div class="mt-8" data-controller="extended-modal" data-extended-modal-prevent-default-action-opening="false">
   <%= render partial: 'posts/modal' %>
   <div class="max-w-6xl flex justify-between items-baseline mx-auto mb-6">
@@ -8,9 +10,7 @@
     </div>
     <div>
       <span class="inline-flex rounded-md shadow-sm">
-        <button class="btn btn-primary" data-action="click->extended-modal#open">
-          New Post
-        </button>
+        <%= link_to 'New Post', new_post_path, class: "btn btn-primary", data: { action: "click->extended-modal#open", 'turbo-frame': 'post_modal' } %>
       </span>
     </div>
   </div>
