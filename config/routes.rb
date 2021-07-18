@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   end
   devise_for :users,
     path: '',
+    controllers: {
+      omniauth_callbacks: 'users/omniauth_callbacks'
+    },
     path_names: {
       sign_in: 'login',
       password: 'forgot',
