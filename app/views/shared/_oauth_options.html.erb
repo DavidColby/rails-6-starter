@@ -5,8 +5,8 @@
 
   <div class="mt-1 grid grid-cols-1 gap-3">
     <div>
-      <form>
-        <button type="submit" class="w-full inline-flex pl-4 py-2 px-4 justify-center border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+      <%= form_tag(user_google_oauth2_omniauth_authorize_path(intent: intent), method: 'post') do %>
+        <button data-turbo="false" type="submit" method="post" class="w-full inline-flex pl-4 py-2 px-4 justify-center border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" class="h-6 w-6 mr-3">
             <defs>
               <path id="a" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
@@ -21,7 +21,7 @@
           </svg>
           <span>Google</span>
         </button>
-      </form>
+      <% end %>
     </div>
   </div>
 </div>

@@ -30,6 +30,10 @@ gem "view_component", '>= 2.3.5', require: "view_component/engine"
 
 gem "devise", github: "ghiculescu/devise", branch: "error-code-422" # https://github.com/heartcombo/devise/pull/5340 not yet merged
 gem "responders", github: "heartcombo/responders" # https://github.com/heartcombo/responders/pull/223 not yet released
+gem 'omniauth', github: 'omniauth/omniauth'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "name_of_person", "~> 1.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,6 +43,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.

@@ -28,7 +28,8 @@ en:
       password_change:
         subject: "Password Changed"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      login_failure: Could not sign you in from %{kind} with %{email}. Have you signed up yet?
+      sign_up_failure: Could not create an account from %{kind} with %{email}. Perhaps you've already signed up?
       success: "Successfully authenticated from %{kind} account."
     passwords:
       edit:
