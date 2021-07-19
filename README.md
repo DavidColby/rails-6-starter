@@ -25,7 +25,7 @@ rails db:create db:migrate
 rails s
 ```
 
-Start the webpack server with `bin/webpack-dev-server`
+Start the webpack server with `bin/webpack-dev-server`. If you're using Sidekiq for background jobs, start Sidekiq with `bundle exec sidekiq`.
 
 ## System requirements
 
@@ -41,6 +41,6 @@ If you want to use Google as an omniauth provider, you will need to set the `oau
 
 ## Deploying to Heroku
 
-The application is ready to deploy to Heroku with no additional configuration changes. If you have Heroku cli set up simply run `heroku create && heroku push origin main`. A simple Procfile is provided to ensure run database migrations.
+The application is ready to deploy to Heroku with no additional configuration changes. If you have Heroku cli set up simply run `heroku create && heroku push origin main`. A simple Procfile is provided to ensure Heroku automatically runs database migrations when needed.
 
 
