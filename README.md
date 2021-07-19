@@ -16,7 +16,7 @@ This is a template repo configured with the following technology out of the box:
 
 ## Getting started
 
-The simplest way to get started is to copy this repo as a template, using the Use Template button at the top of the Github repo page.
+The simplest way to get started is to copy this repo as a template, using the Use this template button at the top of the Github repo page.
 
 Once you've copied the template to your own Github account, clone your repo down to your local machine, `cd` in, and run:
 
