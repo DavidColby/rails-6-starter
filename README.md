@@ -22,6 +22,8 @@ Once you've copied the template to your own Github account, clone your repo down
 
 ```
 rails db:create db:migrate
+bundle install
+yarn
 rails s
 ```
 
