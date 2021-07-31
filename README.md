@@ -16,7 +16,7 @@ This is a template repo configured with the following technology out of the box:
 
 ## Getting started
 
-The simplest way to get started is to copy this repo as a template, using the Use Template button at the top of the Github repo page.
+The simplest way to get started is to copy this repo as a template, using the Use this template button at the top of the Github repo page.
 
 Once you've copied the template to your own Github account, clone your repo down to your local machine, `cd` in, and run:
 
@@ -27,7 +27,7 @@ yarn
 rails s
 ```
 
-Start the webpack server with `bin/webpack-dev-server`
+Start the webpack server with `bin/webpack-dev-server`. If you're using Sidekiq for background jobs, start Sidekiq with `bundle exec sidekiq`.
 
 ## System requirements
 
@@ -43,6 +43,6 @@ If you want to use Google as an omniauth provider, you will need to set the `oau
 
 ## Deploying to Heroku
 
-The application is ready to deploy to Heroku with no additional configuration changes. If you have Heroku cli set up simply run `heroku create && heroku push origin main`. A simple Procfile is provided to ensure run database migrations.
+The application is ready to deploy to Heroku with no additional configuration changes. If you have Heroku cli set up simply run `heroku create && heroku push origin main`. A simple Procfile is provided to ensure Heroku automatically runs database migrations when needed.
 
 
